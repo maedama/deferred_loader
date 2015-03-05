@@ -50,7 +50,7 @@ module DeferredLoader
       end
     end
 
-    def clear
+    def self.clear
       @@registry.clear
     end
   end
