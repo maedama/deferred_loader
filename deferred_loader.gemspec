@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = DeferredLoader::VERSION
   spec.authors       = ["maedama"]
   spec.email         = ["maedama85@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Defered loading Active records and other obejcts to avoid n+1 problem.}
+  spec.description   = %q{Defered loading Active records and other obejcts to avoid n+1 problem.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
