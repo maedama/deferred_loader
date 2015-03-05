@@ -1,3 +1,4 @@
+require 'deferred_loader/executable'
 module DeferredLoader
   class Railtie < ::Rails::Railtie
     initializer 'deferred_loader' do |_app|
@@ -11,6 +12,9 @@ module DeferredLoader
       ActiveSupport.on_load(:before_initialize) do
         require 'deferred_loader/active_support_cache_store_extention'
         ::ActiveSupport::Cache::Store.send :include, DeferredLoader::ActiveSupportCacheStoreExtention
+      end
+      ActiveSupport::Notifications.subscribe('start_processing.action_controller') do |*args|
+        DeferredLoader::Executable.clear 
       end
     end
   end
